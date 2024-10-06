@@ -1,7 +1,7 @@
 [package]
 edition = "2021"
 name = "no_std_collections"
-version = "0.1.4"
+version = "0.1.5"
 description = "Auxiliary structures and traits for using dynamically resizable arrays (Vectors) in flexible environments, supporting both std and no_std contexts."
 license = "MIT"
 authors = ["Rubén Cantón <rubcc95@gmail.com>"]

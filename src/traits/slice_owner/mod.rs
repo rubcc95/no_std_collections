@@ -1,4 +1,6 @@
-pub unsafe trait SliceOwner: IntoIterator {
+pub unsafe trait SliceOwner {
+    type Item;
+
     fn len(&self) -> usize;
 
     fn as_ptr(&self) -> *const Self::Item;
@@ -20,6 +22,7 @@ pub unsafe trait SliceOwner: IntoIterator {
 }
 
 unsafe impl<T, const N: usize> SliceOwner for [T; N] {
+    type Item = T;
     #[inline]
     fn as_ptr(&self) -> *const Self::Item {
         self as *const T
@@ -48,6 +51,7 @@ unsafe impl<T, const N: usize> SliceOwner for [T; N] {
 
 #[cfg(feature = "std")]
 unsafe impl<T> SliceOwner for Vec<T> {
+    type Item = T;
     #[inline]
     fn len(&self) -> usize {
         self.len()
@@ -65,7 +69,9 @@ unsafe impl<T> SliceOwner for Vec<T> {
 }
 
 #[cfg(feature = "std")]
-unsafe impl<T> SliceOwner for Box<[T]> {
+unsafe impl<T> SliceOwner for Box<[T]> {    
+    type Item = T;
+
     #[inline]
     fn len(&self) -> usize {
         (&**self).len()

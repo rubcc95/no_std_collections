@@ -596,6 +596,8 @@ impl<T: PartialEq<U>, U, const N2: usize> PartialEq<StackVec<U, N2>> for &mut [T
 // }
 
 unsafe impl<T, const N: usize> SliceOwner for StackVec<T, N> {
+    type Item = T;
+    
     #[inline]
     fn len(&self) -> usize {
         self.len
