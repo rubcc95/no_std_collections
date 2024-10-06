@@ -6,6 +6,7 @@ description = "Auxiliary structures and traits for using dynamically resizable a
 license = "MIT"
 authors = ["Rubén Cantón <rubcc95@gmail.com>"]
 repository = "https://github.com/rubcc95/no_std_collections"
+documentation = "https://docs.rs/no_std_collections"
 
 [[bench]]
 name = "vec_benchmark"
