@@ -1,0 +1,19 @@
+[package]
+name = "no_std_collections"
+version = "0.1.1"
+edition = "2021"
+description = "Auxiliary structures and traits for using dynamically resizable arrays (Vectors) in flexible environments, supporting both std and no_std contexts."
+license = "MIT" 
+
+[features]
+default = ["std"]
+std = []
+no_std = [] 
+
+[dev-dependencies]
+criterion = "0.3"
+rand = "0.8"
+
+[[bench]]
+name = "vec_benchmark"
+harness = false
