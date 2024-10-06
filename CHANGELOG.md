@@ -1,6 +1,10 @@
 # Changelog
 
-All notable changes to this project will be documented in this file.
+## [0.1.4] - 2024-10-06
+
+### Added
+- `SliceOwner` implementation for `Box<T>`
+
 ## [0.1.3] - 2024-10-06
 
 ### Added
