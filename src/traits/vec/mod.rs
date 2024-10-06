@@ -1,8 +1,6 @@
 mod drain;
-mod ops;
 
 pub use drain::Drain;
-pub use ops::Ops;
 
 use super::SliceOwner;
 use core::{
